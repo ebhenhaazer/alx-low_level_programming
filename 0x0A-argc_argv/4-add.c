@@ -8,46 +8,23 @@
  * Return: 1, if its a number, else 0
  */
 
-int num_checker(char *a)
-{
-	int i, num, len;
-
-	i = 0;
-	num = 0;
-	len = strlen(a);
-	while (i < len)
-	{
-		if (a[i] < '0' || a[i] > '9')
-		{
-			return (-1);
-		}
-		else
-			num = num * 10 + (a[i] - '0');
-		i++;
-	}
-	return (num);
-}
-/**
-* main - add positive numbers
-* @argc: arguement count
-* @argv: array of pointers to arguement strings
-* Return: result of addition or 1
-**/
 int main(int argc, char *argv[])
 {
-	int i, num, sum;
+	int i, sum = 0;
 
-	sum = 0;
+	if (argc < 1)
+		return (0);
+
 	for (i = 1; i < argc; i++)
 	{
-		num = num_checker(argv[i]);
-		if (num == -1)
+		if (!atoi(argv[i]))
 		{
-			printf("Error\n");
+			printf("%s\n", "Error");
 			return (1);
 		}
-		sum += num;
+		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
+
 	return (0);
 }
