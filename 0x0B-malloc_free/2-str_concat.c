@@ -8,7 +8,12 @@
  * @s2: second string
  * Return: pointer to new space in memory or null
  **/
-
+/**
+ * *str_concat - concatenates two strings
+ * @s1: first string
+ * @s2: second string
+ * Return: pointer to new space in memory or null
+ **/
 char *str_concat(char *s1, char *s2)
 {
 	int i, j, k, e, coun;
@@ -16,9 +21,9 @@ char *str_concat(char *s1, char *s2)
 	int coun2 = 0;
 	char *q;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		s1 = s2 = "";
+		s1 = "";
 	}
 	if (s2 == NULL)
 	{
@@ -47,12 +52,4 @@ char *str_concat(char *s1, char *s2)
 		q[k] = s2[e];
 	}
 	q[k] = '\0';
-	return (q);
 }
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-
-    Terms
-    Privacy
-    Security
