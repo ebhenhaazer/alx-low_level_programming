@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * string_nconcat - len of 1st str, len of 2nd str, if n < 2nd, 2nd = n function to concatnate strings with n bytes
+ * string_nconcat - if n < 2nd, 2nd = n fn to concatnate strings with n bytes
  * 2nd + 1st = total len, malloc + null byte, loop to insert into temp arr
  * @s1: input one destination for concatnation
  * @s2: input two source of string
