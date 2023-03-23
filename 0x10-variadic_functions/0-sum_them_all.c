@@ -6,23 +6,21 @@
  * @n: number of arguements
  * Return: sum of all parameters or 0
  **/
-
 int sum_them_all(const unsigned int n, ...)
 {
-	va_list valist;
-	unsigned int i, sum = 0;
+	va_list all_sum;
+	int total = 0;
+	unsigned int i;
 
 	if (n == 0)
 		return (0);
 
-	va_start(valist, n);
+	va_start(all_sum, n);
 
 	for (i = 0; i < n; i++)
-	{
-		sum += va_arg(valist, const unsigned int);
-	}
+		total = total + va_arg(all_sum, unsigned int);
 
-	va_end(valist);
+	va_end(all_sum);
+	return (total);
 
-	return (sum);
 }
